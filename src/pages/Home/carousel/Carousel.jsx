@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Carousel_Info from "../carousel_info/Carousel_Info";
 const images = [
   "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp",
   "https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp",
@@ -55,21 +56,29 @@ export default function Carousel() {
   };
 
   return (
-    <div
-      className="w-full h-[75vh] flex overflow-hidden border border-black transition-opacity duration-300 ease-in-out"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {images.map((el, i) => (
+    <>
+      <div className="flex flex-col">
         <div
-          key={i}
-          className={`w-full h-[100%] ${
-            currentIndex === i ? ` animate-fadeIn` : "hidden"
-          }`}
+          className="w-full h-[75vh] flex overflow-hidden border border-black transition-opacity duration-300 ease-in-out"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
-          <img src={el} className={`w-full h-[100%]`} alt={`img_${i}`} />
+          {images.map((el, i) => (
+            <div
+              key={i}
+              className={`w-full h-[100%] ${
+                currentIndex === i ? ` animate-fadeIn` : "hidden"
+              }`}
+            >
+              <img src={el} className={`w-full h-[100%]`} alt={`img_${i}`} />
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+        <Carousel_Info
+          onClickNextSlide={nextSlide}
+          onClickPrevSlide={prevSlide}
+        />
+      </div>
+    </>
   );
 }

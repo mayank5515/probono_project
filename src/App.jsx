@@ -8,8 +8,9 @@ import Blog from "./pages/Blog/Blog";
 function App() {
   return (
     <>
+      {/* NOTE: h-full w-full */}
       <div
-        className="h-screen w-full 
+        className="h-full w-full 
       "
       >
         <Routes>
