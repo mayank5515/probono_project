@@ -7,8 +7,19 @@ const images = [
 ];
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  // BUG: setInterval(() => nextSlide(), 2000);
+  //NOTE: AUTO SLIDE
+  // useEffect(() => {
+  //   let interval;
+  //   if (!isHovered) {
+  //     interval = setInterval(() => {
+  //       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  //     }, 9000);
 
-  setInterval(() => nextSlide(), 2000);
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [currentIndex, isHovered]);
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "ArrowRight") {
@@ -36,7 +47,11 @@ export default function Carousel() {
   };
 
   return (
-    <div className="w-full h-[75vh] flex overflow-hidden border border-black transition-opacity duration-300 ease-in-out">
+    <div
+      className="w-full h-[75vh] flex overflow-hidden border border-black transition-opacity duration-300 ease-in-out"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseDown={() => setIsHovered(false)}
+    >
       {images.map((el, i) => (
         <div
           key={i}
