@@ -1,10 +1,13 @@
 // import  from "react";
 
+import Carousel from "./carousel/Carousel";
+
 export default function Home() {
   return (
     <div>
+      <Carousel />
       {/*  */}
-      <div className="carousel w-full h-[75vh] z-15">
+      {/* <div className="carousel w-full h-[75vh] z-15">
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
@@ -61,7 +64,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       {/*  */}
     </div>
   );
