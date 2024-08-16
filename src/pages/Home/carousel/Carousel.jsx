@@ -8,6 +8,7 @@ const images = [
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  setInterval(() => nextSlide(), 2000);
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "ArrowRight") {
@@ -35,45 +36,17 @@ export default function Carousel() {
   };
 
   return (
-    <div className="w-full flex overflow-hidden border border-black transition-opacity duration-300 ease-in-out">
+    <div className="w-full h-[75vh] flex overflow-hidden border border-black transition-opacity duration-300 ease-in-out">
       {images.map((el, i) => (
         <div
           key={i}
-          className={`w-full ${
+          className={`w-full h-[100%] ${
             currentIndex === i ? ` animate-fadeIn` : "hidden"
           }`}
         >
-          <img src={el} className={`w-full`} alt={`img_${i}`} />
+          <img src={el} className={`w-full h-[100%]`} alt={`img_${i}`} />
         </div>
       ))}
     </div>
-
-    // ---------------------------------------//
-    // <div className="carousel-container relative w-full max-w-lg mx-auto overflow-hidden">
-    //   <div
-    //     className="carousel-inner flex transition-transform duration-500 ease-in-out"
-    //     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-    //   >
-    //     {images.map((image, index) => (
-    //       <div key={index} className="carousel-item min-w-full">
-    //         <img src={image} alt={`Slide ${index + 1}`} className="w-full" />
-    //       </div>
-    //     ))}
-    //   </div>
-    //   <div className="carousel-controls absolute inset-0 flex justify-between items-center p-4">
-    //     <button
-    //       onClick={prevSlide}
-    //       className="bg-gray-800 text-white p-2 rounded-full"
-    //     >
-    //       Previous
-    //     </button>
-    //     <button
-    //       onClick={nextSlide}
-    //       className="bg-gray-800 text-white p-2 rounded-full"
-    //     >
-    //       Next
-    //     </button>
-    //   </div>
-    // </div>
   );
 }
