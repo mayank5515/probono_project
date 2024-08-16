@@ -4,7 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 
 export default function Carousel_Info({ onClickNextSlide, onClickPrevSlide }) {
   return (
-    <div className="flex flex-col border-4 border-black lg:w-[840px] lg:h-[122px] ">
+    <div className="flex flex-col  border-4 border-black lg:w-[840px] lg:h-[122px] ">
       <div className=" text-center border border-blue-300 px-[14px] py-[12px] text-white bg-[#1573bc] font-normal text-[14px]">
         iProbono strengthens civil society, litigates for people in need,
         advocates for equal justice

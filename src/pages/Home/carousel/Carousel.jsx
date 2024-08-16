@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Carousel_Info from "../carousel_info/Carousel_Info";
 const images = [
   "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp",
@@ -57,7 +57,7 @@ export default function Carousel() {
 
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col relative border-[10px] border-green-700">
         <div
           className="w-full h-[75vh] flex overflow-hidden border border-black transition-opacity duration-300 ease-in-out"
           onMouseEnter={() => setIsHovered(true)}
@@ -74,10 +74,13 @@ export default function Carousel() {
             </div>
           ))}
         </div>
-        <Carousel_Info
-          onClickNextSlide={nextSlide}
-          onClickPrevSlide={prevSlide}
-        />
+        {/*UGLY code ::  check here  */}
+        <div className=" flex lg:absolute lg:left-0 lg:bottom-0  lg:translate-x-[40%] justify-center  items-center border-4 border-purple-500 ">
+          <Carousel_Info
+            onClickNextSlide={nextSlide}
+            onClickPrevSlide={prevSlide}
+          />
+        </div>
       </div>
     </>
   );

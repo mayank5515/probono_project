@@ -5,7 +5,7 @@ import LOGO_IMG from "../assets/nyaya_sarthak_logo.svg";
 export default function Header() {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
   return (
-    <nav className=" bg-[#000000dd]  top-0 sticky text-white border border-black flex flex-wrap items-center justify-between p-4">
+    <nav className=" bg-[#000000dd] z-50 top-0 sticky text-white border border-black flex flex-wrap items-center justify-between p-4">
       <Link to="/" className="translate-x-2">
         <img
           src={`${LOGO_IMG}`}
@@ -19,11 +19,11 @@ export default function Header() {
       >
         <RxHamburgerMenu size={25} />
       </button>
-      {/* GENIUS TECHNIQUE w-full lg:w-auto */}
+      {/* GENIUS TECHNIQUE w-full lg:w-auto , basically mobile-first approach use kr rhe h*/}
       <div
         className={`${
           isMobileMenuShown ? "" : "hidden"
-        } w-full mt-4  lg:mt-0  lg:w-auto lg:block`}
+        } w-full mt-4  lg:mt-0  lg:w-auto lg:block`} //ek toh block plus w-auto will only extend upto number of child elements this div has in it
       >
         <div className="flex p-2 flex-col text-start lg:flex-row space-y-2 lg:space-y-0 lg:space-x-3 border-2 border-slate-300 lg:border-transparent rounded-md font-[Raleway]   lg:font-semibold text-[14px]  lg:text-[18px]">
           <Link
