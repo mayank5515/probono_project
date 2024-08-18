@@ -34,10 +34,11 @@ export default function Footer() {
   ];
 
   return (
-    <div className=" w-full border border-white py-4 bg-slate-950 text-white flex  flex-col lg:flex-row justify-center">
+    <div className=" w-full  py-4 bg-slate-950 text-white flex  flex-col lg:flex-row justify-center">
       <Footer_Box title="Pages" linksArr={PagesArr} />
       <Footer_Box title="Got Questions ? " linksArr={QuestionsArr} />
-      <div className="space-y-4   p-2 lg:w-[10%] w-auto flex flex-col items-center">
+      {/* UGLY: not ugly code just changed width from w-[10%] to w-[18%] */}
+      <div className="space-y-1 p-2 lg:w-[18%] w-auto flex flex-col items-center">
         <h1 className="text-xl font-[Raleway] font-semibold tracking-wider ">
           Follow Us
         </h1>
