@@ -1,4 +1,8 @@
+import { FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import Footer_Box from "./footer_box/Footer_Box";
+
 export default function Footer() {
   const PagesArr = [
     {
@@ -28,10 +32,38 @@ export default function Footer() {
       title: "More Info",
     },
   ];
+
   return (
-    <div className="h-min-[15vh] w-full border border-black p-6 bg-slate-950 text-white flex  flex-col lg:flex-row justify-center">
+    <div className=" w-full border border-white py-4 bg-slate-950 text-white flex  flex-col lg:flex-row justify-center">
       <Footer_Box title="Pages" linksArr={PagesArr} />
       <Footer_Box title="Got Questions ? " linksArr={QuestionsArr} />
+      <div className="space-y-4   p-2 lg:w-[10%] w-auto flex flex-col items-center">
+        <h1 className="text-xl font-[Raleway] font-semibold tracking-wider ">
+          Follow Us
+        </h1>
+        <div className="flex flex-col text-center items-center space-y-2 p-2  ">
+          {/* NOTE: might change color of icons in future */}
+          <a
+            href="www.linkedin.com"
+            className="text-blue-600 hover:text-blue-300 transition"
+          >
+            <FaLinkedin size={30} />
+          </a>
+
+          <a
+            href="www.instagram.com"
+            className="text-blue-600 hover:text-blue-300 transition"
+          >
+            <FaInstagram size={30} />
+          </a>
+          <a
+            href="www.twitter.com"
+            className="text-blue-600 hover:text-blue-300 transition"
+          >
+            <FaTwitter size={30} />
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
