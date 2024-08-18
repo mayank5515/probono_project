@@ -1,18 +1,30 @@
+import { FaLinkedin } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import LOGO_IMG from "../assets/nyaya_sarthak_logo.svg";
 export default function Header() {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
   return (
     <nav className=" bg-[#000000dd] z-50 top-0 sticky text-white border border-black flex flex-wrap items-center justify-between p-4">
-      <Link to="/" className="translate-x-2">
-        <img
-          src={`${LOGO_IMG}`}
-          className="h-[3rem] w-[3rem] bg-white"
-          alt="logo_img"
-        />
-      </Link>
+      <div className=" flex p-2 space-x-4 items-center ">
+        <Link to="/" className="translate-x-2 mr-[0.75rem]">
+          <img
+            src={`${LOGO_IMG}`}
+            className="h-[3rem] w-[3rem] bg-white"
+            alt="logo_img"
+          />
+        </Link>
+        {/* hover:scale-105 transition  duration-400 NOTE: to scale*/}
+        <Link
+          to="/"
+          className="text-2xl font-[Raleway] font-semibold tracking-wide"
+        >
+          NYAYASARTHAK
+        </Link>
+      </div>
       <button
         onClick={() => setIsMobileMenuShown((prev) => !prev)}
         className=" w-fit h-fit p-2 lg:hidden hover:bg-slate-500 border border-transparent focus:ring-2 focus:ring-gray-300 rounded-md relative  "
@@ -29,7 +41,9 @@ export default function Header() {
           <Link
             to="/about"
             className={`${
-              isMobileMenuShown ? "hover:text-blue-500 hover:bg-slate-600" : ""
+              isMobileMenuShown
+                ? "lg:hover:bg-transparent lg:hover:text-slate-400 hover:text-blue-500 hover:bg-slate-600  "
+                : "hover:text-slate-400"
             } px-2 py-1  border rounded-md border-transparent`}
           >
             About
@@ -37,7 +51,9 @@ export default function Header() {
           <Link
             to="/contact"
             className={`${
-              isMobileMenuShown ? "hover:text-blue-500 hover:bg-slate-600" : ""
+              isMobileMenuShown
+                ? " lg:hover:bg-transparent lg:hover:text-slate-400 hover:text-blue-500 hover:bg-slate-600"
+                : "hover:text-slate-400"
             } px-2 py-1  border rounded-md border-transparent`}
           >
             Contact Us
@@ -45,11 +61,33 @@ export default function Header() {
           <Link
             to="/blogs"
             className={`${
-              isMobileMenuShown ? "hover:text-blue-500 hover:bg-slate-600" : ""
+              isMobileMenuShown
+                ? "lg:hover:bg-transparent lg:hover:text-slate-400 hover:text-blue-500 hover:bg-slate-600"
+                : "hover:text-slate-400"
             } px-2 py-1  border rounded-md border-transparent`}
           >
             Blogs
           </Link>
+          <div className="flex items-center space-x-1">
+            <a
+              href="www.linkedin.com"
+              className=" p-1 text-blue-600 hover:text-blue-400 transition"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="www.instagram.com"
+              className=" p-1 text-blue-600 hover:text-blue-400 transition"
+            >
+              <FaInstagram size={20} />
+            </a>
+            <a
+              href="www.twitter.com"
+              className=" p-1 text-blue-600 hover:text-blue-400 transition"
+            >
+              <FaTwitter size={20} />
+            </a>
+          </div>
         </div>
       </div>
     </nav>

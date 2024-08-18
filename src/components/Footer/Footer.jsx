@@ -42,7 +42,7 @@ export default function Footer() {
         <h1 className="text-xl font-[Raleway] font-semibold tracking-wider ">
           Follow Us
         </h1>
-        <div className="flex flex-col text-center items-center space-y-2 p-2  ">
+        <div className="flex flex-col lg:flex-row text-center items-center space-y-2 lg:space-y-0 p-2 space-x-2">
           {/* NOTE: might change color of icons in future */}
           <a
             href="www.linkedin.com"
