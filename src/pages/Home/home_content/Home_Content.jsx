@@ -8,10 +8,10 @@ export default function Home_Content() {
     <div className="border-2 border-red-400 flex justify-center">
       {/* WHAT THEY SAY ABOUT US */}
       <div className="border-2 p-2 border-green-800 w-auto flex-col">
-        <h1 className="text-black tracking-wide text-2xl font-semibold text-center my-2 mb-4">
+        <h1 className="text-black tracking-wide text-2xl font-semibold text-center lg:-translate-x-2 my-2 mb-4">
           What we do
         </h1>
-        <div className="border-2 border-purple-600 flex-col lg:flex-row lg:px-48 flex p-2">
+        <div className="flex-col lg:flex-row lg:px-48 flex p-2 ">
           <InnerBox
             img_url={IMAGE1}
             innerText="iProbono is a global group of social justice organisations and
