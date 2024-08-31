@@ -47,7 +47,7 @@
 // ];
 export default function OuterBox({ title = "Title", children }) {
   return (
-    <div className="border-2 p-2 border-green-800 w-auto flex-col">
+    <div className=" p-2  w-auto flex-col mt-4">
       <h1 className="text-black tracking-wide text-3xl font-semibold text-center lg:-translate-x-2 my-2 mb-4">
         {title}
       </h1>
