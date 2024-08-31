@@ -9,6 +9,7 @@ import LOGO_IMG from "../assets/nyaya_sarthak_logo.svg";
 export default function Header() {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  // UGLY: REFACTOR YOUR CODE
   return (
     <nav className=" bg-[#000000dd] z-50 top-0 sticky text-white border border-black flex flex-wrap items-center justify-between p-4">
       <div className=" flex p-2 space-x-4 items-center ">
