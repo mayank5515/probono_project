@@ -32,18 +32,32 @@ const whatWeDoArr = [
       "We also advocate for policies that promote social equity and end discrimination.",
   },
 ];
+// ------------------------------------------------------//
+
 const newsAndArticleArr = [
   {
     title: "#DesignTheLaw: Legal Design Workshop in Nepal",
-  },
-  {
     date: "MAY 2024",
-  },
-  {
-    country: "SRI LANKA",
-  },
-  {
+    place: "SRI LANKA",
     img_url: IMAGE_NEWS_1,
+  },
+  {
+    title: "Right to Information Win for Child Protection in Sri Lanka",
+    date: "MAY 2024",
+    place: "SRI LANKA",
+    img_url: IMAGE_NEWS_2,
+  },
+  {
+    title: "Looking back and Learning From Crisis",
+    date: "JAN 2024",
+    place: "SOUTH ASIA",
+    img_url: IMAGE_NEWS_3,
+  },
+  {
+    title: "Looking back and Learning From Crisis",
+    date: "MAY 2024",
+    place: "AFGANISTAN",
+    img_url: IMAGE_NEWS_4,
   },
 ];
 export default function Home_Content() {
@@ -66,7 +80,13 @@ export default function Home_Content() {
         {
           <InnerBoxTemplate>
             {newsAndArticleArr.map((el, i) => (
-              <NewsInnerBox key={i} />
+              <NewsInnerBox
+                title={el.title}
+                date={el.date}
+                img_url={el.img_url}
+                place={el.place}
+                key={i}
+              />
             ))}
           </InnerBoxTemplate>
         }
