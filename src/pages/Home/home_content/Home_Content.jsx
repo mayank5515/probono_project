@@ -1,14 +1,15 @@
-import IMAGE1 from "../../../assets/image1_whatwedo.png";
-import IMAGE2 from "../../../assets/image2_whatwedo.jpg";
-import IMAGE3 from "../../../assets/image3_whatwedo.png";
-import IMAGE4 from "../../../assets/image4_whatwedo.jpg";
-import InnerBox from "./what_we_do/innerBox";
+import OuterBox from "./OuterBox";
+
 export default function Home_Content() {
   return (
     <div className="border-2 border-red-400 flex justify-center">
       {/* WHAT THEY SAY ABOUT US */}
-
+      <OuterBox title="What we do" />
       {/* WHAT THEY SAY ABOUT US */}
+      {/* --------------------- */}
+      {/*  NEWS AND ARTICLES  */}
+
+      {/*  NEWS AND ARTICLES  */}
     </div>
   );
 }
