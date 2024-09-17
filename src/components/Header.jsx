@@ -63,7 +63,7 @@ export default function Header() {
             {/*  */}
             <div
               className={`lg:border-2 lg:border-grey p-2 flex-col lg:text-center items-center space-y-2 ${
-                !isDropDownOpen ? "" : "hidden"
+                isDropDownOpen ? "" : "hidden"
               } transition ease-in-out z-10 lg:absolute lg:translate-y-2 lg:bg-[#000000dd]`}
             >
               <div className="w-full hover:border-2 hover:border-gray-700">

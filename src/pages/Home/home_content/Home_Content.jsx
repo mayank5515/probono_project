@@ -1,3 +1,5 @@
+import { IoIosArrowForward } from "react-icons/io"; 
+import { IoIosArrowBack } from "react-icons/io"; 
 import OuterBox from "./OuterBox";
 import IMAGE1 from "../../../assets/image1_whatwedo.png";
 import IMAGE2 from "../../../assets/image2_whatwedo.jpg";
@@ -10,6 +12,7 @@ import IMAGE_NEWS_4 from "../../../assets/news_image4.png";
 import InnerBoxTemplate from "./InnerBoxTemplate";
 import InnerBox from "./what_we_do/InnerBox";
 import NewsInnerBox from "./news_and_articles/NewsInnerBox";
+import { useState } from "react";
 const whatWeDoArr = [
   {
     img_url: IMAGE1,
@@ -60,7 +63,19 @@ const newsAndArticleArr = [
     img_url: IMAGE_NEWS_4,
   },
 ];
+const whatTheySayAboutUsArr = [IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE_NEWS_1, IMAGE_NEWS_2];
 export default function Home_Content() {
+  // CAROUSEL 2
+  //NOTE: make sure at least 2 items are there in the array (whatTheySayAboutUsArr) !
+  const [currIndex, setCurrIndex] = useState(0);
+  function nextSlide() {
+    console.log("nextSlide", currIndex);
+    setCurrIndex((prevIndex)=>(prevIndex+2)%whatTheySayAboutUsArr.length)
+  }
+  function prevSlide() {
+    console.log("prevSlide", currIndex);
+    setCurrIndex((prevIndex) => (prevIndex - 2 + whatTheySayAboutUsArr.length) % whatTheySayAboutUsArr.length);
+  }
   return (
     <div className="border-2 border-red-400 flex-col justify-center">
       {/* WHAT THEY SAY ABOUT US */}
@@ -81,18 +96,33 @@ export default function Home_Content() {
           <InnerBoxTemplate>
             {newsAndArticleArr.map((el, i) => (
               <NewsInnerBox
-                title={el.title}
-                date={el.date}
-                img_url={el.img_url}
-                place={el.place}
-                key={i}
+              title={el.title}
+              date={el.date}
+              img_url={el.img_url}
+              place={el.place}
+              key={i}
               />
             ))}
           </InnerBoxTemplate>
         }
       </OuterBox>
-
       {/*  NEWS AND ARTICLES  */}
+      {/*--------------------------------- */}
+      {/* WHAT THEY SAY ABOUT US */}
+      <OuterBox title="What they say about us ?">
+        <section className="border-2 border-black p-1 flex justify-center items-center">
+          {/* CAROUSEL DIV */}
+          <button  className="border-2 border-blue-500 h-[2rem] w-[2rem] bg-white p-1 -translate-x-4 flex items-center text-blue-500 text-2xl" onClick={()=>nextSlide()}><IoIosArrowBack /></button>
+          <div className="border-2 border-red-500 flex h-[60vh] overflow-hidden p-2">
+          <div className="border-2 border-green-500"><img src={IMAGE1} className="h-full" /></div>
+          <div className="border-2 border-yellow-400"><img src={IMAGE2} className="h-full" /></div>
+          </div>
+
+          {/* CAROUSEL DIV */}
+          </section>
+      </OuterBox>
+      {/* WHAT THEY SAY ABOUT US */}
+
     </div>
   );
 }
