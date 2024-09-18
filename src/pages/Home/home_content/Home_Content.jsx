@@ -16,13 +16,13 @@ export default function Home_Content() {
   const [currIndex, setCurrIndex] = useState(0);
   function nextSlide() {
     console.log("nextSlide", currIndex);
-    setCurrIndex((prevIndex) => (prevIndex + 2) % whatTheySayAboutUsArr.length);
+    setCurrIndex((prevIndex) => (prevIndex + 1) % whatTheySayAboutUsArr.length);
   }
   function prevSlide() {
     console.log("prevSlide", currIndex);
     setCurrIndex(
       (prevIndex) =>
-        (prevIndex - 2 + whatTheySayAboutUsArr.length) %
+        (prevIndex - 1 + whatTheySayAboutUsArr.length) %
         whatTheySayAboutUsArr.length
     );
   }
