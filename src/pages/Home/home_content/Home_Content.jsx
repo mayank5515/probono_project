@@ -9,7 +9,7 @@ import Testimonial from "./testimonials/Testimonial";
 import whatWeDoArr from "../../../utils/whatWeDoArr";
 import newsAndArticleArr from "../../../utils/newsAndArticleArr";
 import whatTheySayAboutUsArr from "../../../utils/whatTheySayAboutUsArr";
-
+// FIX: add auto scroll to the carousel
 export default function Home_Content() {
   // CAROUSEL 2
   //NOTE: make sure at least 2 items are there in the array (whatTheySayAboutUsArr) !
@@ -60,9 +60,9 @@ export default function Home_Content() {
       {/*--------------------------------- */}
       {/* WHAT THEY SAY ABOUT US */}
       <OuterBox title="What they say about us ?">
-        <section className="border-2 border-black p-1 ">
+        <section className="p-1 ">
           {/* CAROUSEL DIV (RED ONE IS)*/}
-          <div className="border-2 border-red-500 flex flex-row justify-center items-center overflow-hidden p-2">
+          <div className="flex flex-row justify-center items-center overflow-hidden p-2">
             <button
               className={`border-2 border-blue-400 h-[2.2rem] w-[2.2rem] hidden bg-white p-1 lg:-translate-x-2 lg:flex items-center text-blue-600 text-2xl`}
               onClick={() => nextSlide()}
@@ -70,12 +70,13 @@ export default function Home_Content() {
               <IoIosArrowBack />
             </button>
 
-            <div className="flex w-[100%] md:w-[75%] lg:w-[50%] border-2 border-pink-500">
+            <div className="flex w-[100%] md:w-[75%] lg:w-[50%] p-2 ">
               {whatTheySayAboutUsArr
                 .slice(currIndex, currIndex + 2)
                 .map((el, i) => (
                   <Testimonial
                     key={i}
+                    index={i}
                     img_url={el.profileImg}
                     testimonial={el.testimonial}
                     name={el.name}
@@ -93,8 +94,8 @@ export default function Home_Content() {
           </div>
           {/* CAROUSEL DIV */}
           {/* RESPONSIVE BUTTONS */}
-          <div className=" border-2 border-green-500 flex justify-center lg:hidden">
-            <div className="flex  border-2 border-yellow-400 p-1 space-x-2">
+          <div className=" flex justify-center lg:hidden mt-2">
+            <div className="flex  p-1 space-x-2">
               <button
                 className="border-2 border-blue-400 h-[2rem] w-[2rem]  bg-white p-1 lg:-translate-x-1 flex items-center text-blue-600 text-2xl"
                 onClick={() => nextSlide()}

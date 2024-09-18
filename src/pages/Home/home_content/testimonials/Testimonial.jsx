@@ -1,8 +1,19 @@
 // IMG URL , TESTIMONIAL , NAME , PROFILE
-export default function Testimonial({ img_url, testimonial, name, profile }) {
+export default function Testimonial({
+  index,
+  img_url,
+  testimonial,
+  name,
+  profile,
+}) {
+  console.log("FROM TESTIMONIALS", index);
   return (
     <>
-      <div className="border-2 border-green-500  p-2 h-full flex flex-col items-center">
+      <div
+        className={`${
+          index % 2 == 0 ? "border-r-2 border-gray-300" : ""
+        }   p-2 h-full flex flex-col items-center`}
+      >
         {/* PROFILE IMAGE CIRCLE */}
         <div className="border-2 border-gray-500 rounded-full p-1">
           <img
@@ -13,14 +24,14 @@ export default function Testimonial({ img_url, testimonial, name, profile }) {
         {/* PROFILE IMAGE CIRCLE */}
         {/* --------------------- */}
         {/* OUTER BOX FOR TESTIMONIAL AND NAME AND PROFILE */}
-        <div className="border-2 border-purple-500 flex-col items-center mt-2">
+        <div className="flex-col items-center mt-2">
           {/* TESTIMONIAL */}
-          <div className="border-2 border-green-500 px-6 text-center ">
+          <div className=" px-6 text-center ">
             <p className="text-black italic">{testimonial}</p>
           </div>
           {/* TESTIMONIAL */}
           {/* NAME , PROFILE */}
-          <div className="border-2 border-blue-400 flex flex-col items-center py-2">
+          <div className="flex flex-col items-center py-2">
             {/* FIX: need to reconfigure tailwind or something so that i can add font styles */}
             <h3 className="text-blue-500 font-semibold text-[18px] font-sans">
               {name}
