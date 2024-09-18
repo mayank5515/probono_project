@@ -72,7 +72,7 @@ export default function Home_Content() {
 
             <div className="flex w-[100%] md:w-[75%] lg:w-[50%] p-2 ">
               {whatTheySayAboutUsArr
-                .slice(currIndex, currIndex + 2)
+                .slice(currIndex, currIndex + 1)
                 .map((el, i) => (
                   <Testimonial
                     key={i}

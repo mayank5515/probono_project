@@ -9,11 +9,7 @@ export default function Testimonial({
   console.log("FROM TESTIMONIALS", index);
   return (
     <>
-      <div
-        className={`${
-          index % 2 == 0 ? "border-r-2 border-gray-300" : ""
-        }   p-2 h-full flex flex-col items-center`}
-      >
+      <div className={`p-2 h-full flex flex-col items-center`}>
         {/* PROFILE IMAGE CIRCLE */}
         <div className="border-2 border-gray-500 rounded-full p-1">
           <img
