@@ -68,7 +68,7 @@ export default function Header() {
             >
               <div className="w-full hover:border-2 hover:border-gray-700">
                 <Link
-                  to="/about/whatWeDo"
+                  to="about"
                   className={`px-2 py-1 rounded-md hover:text-blue-500 lg:hover:text-slate-300`}
                 >
                   What We Do ?
