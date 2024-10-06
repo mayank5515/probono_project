@@ -1,5 +1,3 @@
-import React from "react";
-import Home_Content from "../Home/home_content/Home_Content";
 import OuterBox from "../Home/home_content/OuterBox";
 import InnerBox from "../Home/home_content/what_we_do/InnerBox";
 import InnerBoxTemplate from "../Home/home_content/InnerBoxTemplate";
@@ -16,13 +14,13 @@ export default function WhatWeDo() {
         />
       </div>
 
-      <section className="border-2 border-black p-2">
-        <div className="border-2 border-green-400 px-4 flex-col justify-center">
+      <section className="border-2 border-black  flex justify-center">
+        <div className="border-2 border-green-400 p-4 lg:w-[65vw] flex-col justify-center">
           <h1 className="text-black text-2xl font-semibold p-2">What we do</h1>
-          <div className="border-2 space-y-2 border-purple-500  p-2 flex-col items-center text-black">
+          <div className="border-2 space-y-2 border-purple-500  p-2 flex-col items-center text-black text-[16px]">
             <p>
-              iProbono’s mission is to enable people to access their rights in
-              pursuit of a just society.
+              iProbono&apos;s mission is to enable people to access their rights
+              in pursuit of a just society.
             </p>
 
             <p className="leading-7">
@@ -34,7 +32,7 @@ export default function WhatWeDo() {
               discrimination
             </p>
 
-            <p className="leading-5">
+            <p className="leading-6">
               iProbono provides holistic counsel with a strong, lean team that
               delivers strategic direction and execution, while also leveraging
               the expertise and commitment of a wide community of pro bono
