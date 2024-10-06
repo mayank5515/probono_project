@@ -1,41 +1,50 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import WhatWeDo from "../AboutPages/WhatweDo";
+import { NavLink, Outlet } from "react-router-dom";
+import WhatWeDo from "../AboutPages/WhatWeDo";
 export default function About() {
   return (
     <>
-      <div className="bg-white px-10 p-5 flex items-center justify-between font-bold text-sm">
-        <div className="flex justify-between space-x-12">
+      <div className="bg-white px-8 p-4 flex items-center justify-between font-bold text-sm">
+        <div className="flex  space-x-3 lg:space-x-10 ">
           <div>
-            <NavLink 
+            <NavLink
               to="/about"
-              className={
-                ({isActive}) => 
-                  `${isActive ? "text-blue-600" : "text-black"} hover:text-blue-800`
+              end
+              className={({ isActive }) =>
+                `${
+                  isActive
+                    ? "text-blue-600 hover:text-blue-800"
+                    : "text-black hover:text-gray-400"
+                } transistion-colors duration-300`
               }
             >
-              WHAT WE ARE
+              WHO WE ARE
             </NavLink>
           </div>
           <div>
-            <NavLink 
-              to="/whatwedo"
-              className={
-                ({isActive}) => 
-                  `${isActive ? "text-blue-600" : "text-black"} hover:text-blue-800`
+            <NavLink
+              to="/about/whatwedo"
+              className={({ isActive }) =>
+                `${
+                  isActive
+                    ? "text-blue-600 hover:text-blue-300"
+                    : "text-black hover:text-gray-600"
+                } transistion-colors duration-300`
               }
             >
               WHAT WE DO
             </NavLink>
           </div>
         </div>
-        <div>
-          <button className="border w-44  border-blue-600 p-4 text-sm">
+        <div className="hidden lg:flex ">
+          <button className="border w-44 hover:opacity-65  border-blue-600 p-4 text-sm  text-black">
             SHARE THIS PAGE
           </button>
         </div>
       </div>
-      <WhatWeDo />
+      <Outlet />
+      {/* IT SHOULD HAVE BEEN WHO WE ARE PAGE */}
+      {/* <WhatWeDo /> */}
     </>
   );
 }
