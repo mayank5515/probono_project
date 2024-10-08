@@ -7,26 +7,29 @@ import Contact from "./pages/Contact/Contact";
 import Blog from "./pages/Blog/Blog";
 import WhatWeDo from "./pages/AboutPages/WhatWeDo";
 import WhoWeAre from "./pages/AboutPages/WhoWeAre";
+import { TestimonialProvider } from "./context/testimonialContext";
 function App() {
   return (
     <>
-      {/* NOTE: h-full w-full */}
-      <div
-        className="h-full w-full 
-      "
-      >
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />}>
-              <Route index element={<WhoWeAre />} />
-              <Route path="/about/whatwedo" element={<WhatWeDo />} />
+      <TestimonialProvider>
+        {/* NOTE: h-full w-full */}
+        <div
+          className="h-full w-full 
+        "
+        >
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />}>
+                <Route index element={<WhoWeAre />} />
+                <Route path="/about/whatwedo" element={<WhatWeDo />} />
+              </Route>
+              <Route path="contact" element={<Contact />} />
+              <Route path="blogs" element={<Blog />} />
             </Route>
-            <Route path="contact" element={<Contact />} />
-            <Route path="blogs" element={<Blog />} />
-          </Route>
-        </Routes>
-      </div>
+          </Routes>
+        </div>
+      </TestimonialProvider>
     </>
   );
 }

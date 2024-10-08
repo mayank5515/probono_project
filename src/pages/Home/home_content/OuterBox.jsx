@@ -45,15 +45,21 @@
 //     img_url: IMAGE_NEWS_1,
 //   },
 // ];
-export default function OuterBox({ title = "Title", children }) {
+export default function OuterBox({
+  title = "Title",
+  children,
+  disableTopHr = false,
+  disableBottomHr = false,
+}) {
   return (
     <div className=" p-2  w-auto flex-col my-2">
+      {/* {disableTopHr ? "" : <hr className="border-t border-gray-300" />} */}
       <h1 className="text-black tracking-wide text-3xl font-semibold text-center lg:-translate-x-2 my-2 mb-4">
         {title}
       </h1>
       {children}
       {/* INCLUDE THIS ONLY FOR WHAT WE DO CONTENT */}
-      <hr className="border-t border-gray-300" />
+      {/* {disableBottomHr ? "" : <hr className="border-t border-gray-300" />} */}
     </div>
   );
 }

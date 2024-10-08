@@ -6,7 +6,7 @@ export default function Testimonial({
   name,
   profile,
 }) {
-  console.log("FROM TESTIMONIALS", index);
+  // console.log("FROM TESTIMONIALS", index);
   return (
     <>
       <div className={`p-2 h-full flex flex-col items-center`}>
