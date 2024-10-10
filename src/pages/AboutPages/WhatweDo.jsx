@@ -6,18 +6,20 @@ import WhatWeDoPara from "../../components/whatWeDoPageComponents/whatWeDoPara";
 import CompleteTestimonial from "../../components/completeTestimonial/CompleteTestimonial";
 import { TestimonialContext } from "../../context/testimonialContext";
 import { useContext } from "react";
+import AboutHeaderImage from "../../components/AboutImageComp/AboutHeaderImage";
 // THIS IS WHAT WE DO PAGE
 export default function WhatWeDo() {
   const { currIndex, nextSlide, prevSlide } = useContext(TestimonialContext);
   // NOTE: use section html tag for proper seperation
   return (
     <>
-      <div className="border-2 border-yellow-300 flex justify-center items-center w-full  bg-[#1573bc]">
+      {/* <div className="border-2 border-yellow-300 flex justify-center items-center w-full  bg-[#1573bc]">
         <img
           src="https://i-probono.com/wp-content/uploads/2023/08/gf.jpg"
           className=" border-2 border-green-500 lg:h-[70vh] lg:w-[60vw]"
         />
-      </div>
+      </div> */}
+      <AboutHeaderImage img_url="https://i-probono.com/wp-content/uploads/2023/08/gf.jpg" />
       {/* WHAT WE DO - PARA SECTION */}
       <section>
         <WhatWeDoPara title="What We Do">

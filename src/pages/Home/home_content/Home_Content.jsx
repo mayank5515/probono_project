@@ -11,7 +11,7 @@ export default function Home_Content() {
   //CONSUMING CONTEXT
   const { currIndex, prevSlide, nextSlide } = useContext(TestimonialContext);
   return (
-    <div className="border-2 border-red-400 flex-col justify-center">
+    <div className="flex-col justify-center">
       {/* WHAT THEY SAY ABOUT US */}
       <OuterBox title="What we do">
         {
