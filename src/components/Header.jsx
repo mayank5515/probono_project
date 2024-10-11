@@ -33,9 +33,10 @@ export default function Header() {
 
   return (
     <nav className=" px-6 bg-[#202020] text-white top-0 sticky z-50 w-full py-2">
-      <div className="border-2 border-green-500 flex items-center justify-evenly ">
+      {/*  NOTE: OUTER MOST DIV */}
+      <div className="flex items-center justify-evenly ">
         {/* NAME AND LOGO */}
-        <div className="border-2 border-blue-600 flex items-center space-x-2 md:space-x-4">
+        <div className="flex items-center space-x-2 md:space-x-4">
           <Link to="/">
             <img
               src={`${LOGO_IMG}`}
@@ -47,13 +48,13 @@ export default function Header() {
             <Link to="/">NYAYASARTHAK</Link>
           </h1>
         </div>
-        {/* LINKS */}
-        <div className="border-2 border-orange-500 flex items-center  space-x-4 p-2 font-[Raleway] text-[16px] font-semibold">
+        {/* NOTE: LINKS */}
+        <div className=" flex items-center  space-x-4 p-2 font-[Raleway] text-[16px] font-semibold">
           {navlinksArr.map((el, i) => {
             if (el.linkTitle === "About") {
               return (
                 <div key={i}>
-                  <div className="border-2 border-green-700 font-medium hover:text-[#e1dcd6] flex items-center">
+                  <div className=" font-medium hover:text-[#e1dcd6] flex items-center">
                     <Link to={el.linkPath}>{el.linkTitle}</Link>
                     <button onClick={() => setIsDropDownOpen(!isDropDownOpen)}>
                       <IoMdArrowDropdown className="cursor-pointer hover:scale-125" />
@@ -63,7 +64,7 @@ export default function Header() {
                   <section
                     className={`${
                       isDropDownOpen ? "visible" : "hidden"
-                    } z-50 border-2 text-center border-yellow-400 p-2 w-[10rem] translate-y-2  -translate-x-10 absolute bg-[#202020]`}
+                    } z-50 border-2 border-gray-700 text-center  p-2 w-[10rem] translate-y-2  -translate-x-10 absolute bg-[#202020]`}
                   >
                     <div className="hover:text-[#e1dcd6]">
                       <Link to="/about">Who We Are</Link>
@@ -91,17 +92,14 @@ export default function Header() {
               );
             }
             return (
-              <div
-                className="border-2 border-green-700 hover:text-[#e1dcd6]"
-                key={i}
-              >
+              <div className="hover:text-[#e1dcd6]" key={i}>
                 <Link to={el.linkPath}>{el.linkTitle}</Link>
               </div>
             );
           })}
 
           {/* SOCIAL MEDIA LINKS IN ONE DIV */}
-          <div className="flex items-center border-2 border-pink-500 space-x-2">
+          <div className="flex items-center  space-x-4">
             <a
               href="www.linkedin.com"
               className="text-blue-600 hover:text-blue-400 transition"
