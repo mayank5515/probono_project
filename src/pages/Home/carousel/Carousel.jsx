@@ -79,9 +79,9 @@ export default function Carousel() {
 
   return (
     <>
-      <div className="flex flex-col  relative ">
+      <div className="flex flex-col  relative border-2 border-red-600 ">
         <div
-          className="w-full h-[75vh] flex overflow-hidden transition-opacity duration-300 ease-in-out"
+          className=" w-full h-[95vh] flex overflow-hidden transition-opacity duration-300 ease-in-out"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
