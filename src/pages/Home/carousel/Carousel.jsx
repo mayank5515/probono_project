@@ -44,13 +44,13 @@ export default function Carousel() {
   //   }
   // }, [currentIndex, isHovered]);
   useEffect(() => {
-    // let interval;
-    //NOTE: AUTO SLIDE IMPLEMENTED HERE
-    // if (!isHovered) {
-    //   interval = setInterval(() => {
-    //     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    //   }, 4000); //NOTE: change time to whatever suits you
-    // }
+    let interval;
+    // NOTE: AUTO SLIDE IMPLEMENTED HERE
+    if (!isHovered) {
+      interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 4000); //NOTE: change time to whatever suits you
+    }
     const handleKeyDown = (event) => {
       if (event.key === "ArrowRight") {
         nextSlide();
@@ -61,10 +61,10 @@ export default function Carousel() {
 
     window.addEventListener("keydown", handleKeyDown);
 
-    // return () => {
-    //   window.removeEventListener("keydown", handleKeyDown);
-    //   clearInterval(interval);
-    // };
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      clearInterval(interval);
+    };
   }, [isHovered]);
 
   const nextSlide = () => {

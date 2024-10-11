@@ -26,15 +26,20 @@ export default function Header() {
   // const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   // UGLY: REFACTOR YOUR CODE
+
+  // const onHoverShowDropDown =(e)=>{
+  //   if(!ishove)
+  // }
+
   return (
-    <nav className=" px-6 bg-[#202020] text-white fixed z-50 w-full">
+    <nav className=" px-6 bg-[#202020] text-white top-0 sticky z-50 w-full py-2">
       <div className="border-2 border-green-500 flex items-center justify-evenly ">
         {/* NAME AND LOGO */}
         <div className="border-2 border-blue-600 flex items-center space-x-2 md:space-x-4">
           <Link to="/">
             <img
               src={`${LOGO_IMG}`}
-              className="h-[2.5rem] w-[2.5rem] bg-white"
+              className="h-[3rem] w-[3rem] bg-white"
               alt="logo_img"
             />
           </Link>
@@ -43,12 +48,12 @@ export default function Header() {
           </h1>
         </div>
         {/* LINKS */}
-        <div className="border-2 border-orange-500 flex space-x-4 p-2 font-[Raleway] text-[16px] font-semibold">
+        <div className="border-2 border-orange-500 flex items-center  space-x-4 p-2 font-[Raleway] text-[16px] font-semibold">
           {navlinksArr.map((el, i) => {
             if (el.linkTitle === "About") {
               return (
                 <div key={i}>
-                  <div className="border-2 border-green-700 font-medium  flex items-center">
+                  <div className="border-2 border-green-700 font-medium hover:text-[#e1dcd6] flex items-center">
                     <Link to={el.linkPath}>{el.linkTitle}</Link>
                     <button onClick={() => setIsDropDownOpen(!isDropDownOpen)}>
                       <IoMdArrowDropdown className="cursor-pointer hover:scale-125" />
@@ -57,24 +62,39 @@ export default function Header() {
                   {/* DROPDOWN FOR ABOUT */}
                   <section
                     className={`${
-                      isDropDownOpen ? "hidden" : "visible"
-                    } z-50 border-2 text-center border-yellow-400 py-2 px-1 -translate-x-5 absolute bg-[#202020]`}
+                      isDropDownOpen ? "visible" : "hidden"
+                    } z-50 border-2 text-center border-yellow-400 p-2 w-[10rem] translate-y-2  -translate-x-10 absolute bg-[#202020]`}
                   >
-                    <div>
+                    <div className="hover:text-[#e1dcd6]">
                       <Link to="/about">Who We Are</Link>
                     </div>
-                    <div>
+                    <hr className="border-t border-gray-500" />
+                    <div className="hover:text-[#e1dcd6]">
                       <Link to="/about/whatwedo">What We Do</Link>
                     </div>
-                    <div>
+                    <hr className="border-t border-gray-500" />
+                    <div className="hover:text-[#e1dcd6]">
                       <Link to="/about/faqs">FAQS</Link>
                     </div>
                   </section>
                 </div>
               );
             }
+            if (el.linkTitle === "Our Team") {
+              return (
+                <button
+                  className=" rounded-md bg-[#eed814] hover:bg-[#afa016] transition-colors duration-1000 px-2 py-1 text-black text-[14px] font-bold"
+                  key={i}
+                >
+                  <Link to={el.linkPath}>{el.linkTitle}</Link>
+                </button>
+              );
+            }
             return (
-              <div className="border-2 border-green-700 " key={i}>
+              <div
+                className="border-2 border-green-700 hover:text-[#e1dcd6]"
+                key={i}
+              >
                 <Link to={el.linkPath}>{el.linkTitle}</Link>
               </div>
             );
