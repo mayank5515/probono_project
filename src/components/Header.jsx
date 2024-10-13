@@ -2,7 +2,6 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import LOGO_IMG from "../assets/nyaya_sarthak_logo.svg";
 import BottomButtonHeader from "./HeaderComponents/BottomButtonHeader";
 import SocialMediaLinks from "./HeaderComponents/SocialMediaLinks";
 import LogoAndName from "./HeaderComponents/LogoAndName";
