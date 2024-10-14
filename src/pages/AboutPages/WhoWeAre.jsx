@@ -29,8 +29,8 @@ export default function WhoWeAre() {
   return (
     <div>
       <AboutHeaderImage img_url="https://i-probono.com/wp-content/uploads/2023/08/d-1.jpg" />
-      <section className="border-2 border-red-500 lg:px-[13rem]">
-        <div className=" p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 border-2 border-green-500">
+      <section className="lg:px-[13rem] ">
+        <div className=" p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {whoWeAreArr.map((TeamMemberEl, i) => {
             const isInLastRow =
               i >=
